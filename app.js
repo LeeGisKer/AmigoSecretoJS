@@ -17,7 +17,13 @@ function agregarAmigo() {
         return;
     }
 
-    //se agrega el nombre a la lista de amigos
+    //verifica que el nombres no se repita
+    if (nombresRepetidos(nombre)) {
+        alert('El nombre ya fue agregado');
+        return;
+    }
+
+    //agrega el nombre a la lista de amigos
     nombres.push(nombre);
     let listaAmigos = document.getElementById('listaAmigos');
     let li = document.createElement('li');
@@ -50,3 +56,8 @@ function sortearAmigo(){
 
 }
 
+function nombresRepetidos(nombres){
+
+    return nombres.some(n => nombres.tolowercase() === nombre.toLowerCase());
+
+}
