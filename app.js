@@ -6,6 +6,10 @@ let amigoAleatorio = '';
 let amigoSorteado = '';
 let amigoResultado = '';
 
+function nombresRepetidos(nombre){
+
+    return nombres.some(n => n.toLowerCase() === nombre.toLowerCase());
+}
 
 function agregarAmigo() {
     let inputAmigo = document.getElementById('amigo');
@@ -16,13 +20,13 @@ function agregarAmigo() {
         alert('Debes ingresar un nombre');
         return;
     }
-
+    
     //verifica que el nombres no se repita
     if (nombresRepetidos(nombre)) {
         alert('El nombre ya fue agregado');
         return;
     }
-
+    
     //agrega el nombre a la lista de amigos
     nombres.push(nombre);
     let listaAmigos = document.getElementById('listaAmigos');
@@ -56,8 +60,3 @@ function sortearAmigo(){
 
 }
 
-function nombresRepetidos(nombres){
-
-    return nombres.some(n => nombres.tolowercase() === nombre.toLowerCase());
-
-}
